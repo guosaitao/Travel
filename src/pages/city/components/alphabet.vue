@@ -20,7 +20,9 @@ export default {
   },
   data() {
       return {
-          touchstatus:false
+          touchstatus:false,
+          startY:0,
+          timer:null
       }
   },
   computed: {
@@ -32,6 +34,9 @@ export default {
           return letter
       }
   },
+  updated () {
+      this.startY=this.$refs['A'][0].offsetTop
+  },
   methods: {
       changeClick (e) {
           this.$emit("change",e.target.innerText)
@@ -41,12 +46,11 @@ export default {
       },
       changeTouchMove (e) {
           if(this.touchstatus){
-              var startY=this.$refs['A'][0].offsetTop
-              var touchY=e.touches[0].clientY-79
-              var index=Math.floor((touchY-startY)/20)
-              if(index>= 0 && this.letter.length){
-                  this.$emit('change',this.letter[index])
-              }
+            var touchY=e.touches[0].clientY-79
+            var index=Math.floor((touchY-this.startY)/20)
+            if(index>= 0 && this.letter.length){
+                this.$emit('change',this.letter[index])
+            }
           }
       },
       changeTouchEnd () {
