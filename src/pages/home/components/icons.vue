@@ -28,7 +28,6 @@ export default {
   },
   computed: {
     pages: function() {
-        console.log(this.list)
       var pages = [];
       this.list.forEach(function(item, index) {
         var page = Math.floor(index / 8); //页码

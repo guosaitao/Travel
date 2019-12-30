@@ -5,14 +5,14 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">上海</div>
+            <div class="button">{{this.$store.state.city}}</div>
           </div>
         </div>
       </div>
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper" v-for="item of hostlist" :key="item.id">
+          <div class="button-wrapper" v-for="item of hostlist" :key="item.id" @click="cityClick(item.name)">
             <div class="button">{{item.name}}</div>
           </div>
         </div>
@@ -20,7 +20,7 @@
       <div class="area">
         <div v-for="(value,key,index) in citylist" :key="index" :ref="key">
           <div class="title border-topbottom">{{key}}</div>
-          <div class="item-list" v-for="city of value" :key="city.id">
+          <div class="item-list" v-for="city of value" :key="city.id" @click="cityClick(city.name)">
             <div class="item border-bottom">{{city.name}}</div>
           </div>
         </div>
@@ -40,6 +40,12 @@ export default {
     hostlist: Array,
     citylist:Object,
     changeLetter:String
+  },
+  methods:{
+    cityClick (city) {
+      this.$store.commit("changeCity",city)
+      this.$router.push('/')
+    }
   },
   mounted () {
     this.scroll=new betterScroller(this.$refs.wrapper);
