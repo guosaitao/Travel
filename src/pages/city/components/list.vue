@@ -31,6 +31,7 @@
 <script>
 import ListAlphabet from './alphabet'
 import betterScroller from 'better-scroll'
+import {mapState} from 'vuex'
 export default {
   name: "cityList",
   components:{
@@ -41,11 +42,17 @@ export default {
     citylist:Object,
     changeLetter:String
   },
+  computed:{
+    ...mapState({
+      countCity:'city'
+    })
+  },
   methods:{
     cityClick (city) {
       this.$store.commit("changeCity",city)
       this.$router.push('/')
-    }
+    },
+    
   },
   mounted () {
     this.scroll=new betterScroller(this.$refs.wrapper);

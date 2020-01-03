@@ -2,7 +2,7 @@
   <div class="hot">
     <div class="title">热销服务</div>
     <ul>
-      <li class="item" v-for="item of list" :key="item.id">
+      <router-link tag="li" :to="'/detail/'+item.id" class="item" v-for="item of list" :key="item.id">
         <div class="item_img">
           <img
             :src="item.imgUrl"
@@ -13,7 +13,7 @@
             <p class="item_desc">{{item.desc}}</p>
             <button class="item_button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
