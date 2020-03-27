@@ -63,7 +63,7 @@ export default {
         this.scroll.scrollToElement(this.$refs[this.changeLetter][0])
       }
     }
-  },
+  }
 };
 </script>
 <style lang="stylus" scoped>
