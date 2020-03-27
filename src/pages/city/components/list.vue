@@ -5,7 +5,7 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.$store.state.city}}</div>
+            <div class="button">{{countCity}}</div>
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@
 <script>
 import ListAlphabet from './alphabet'
 import betterScroller from 'better-scroll'
-import {mapState} from 'vuex'
+import {mapState,mapGetters} from 'vuex'
 export default {
   name: "cityList",
   components:{
@@ -44,8 +44,11 @@ export default {
   },
   computed:{
     ...mapState({
-      countCity:'city'
-    })
+      countCity:'city',
+    }),
+    // ...mapGetters({
+    //   countCity:'getCity'
+    // })
   },
   methods:{
     cityClick (city) {

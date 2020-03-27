@@ -50,6 +50,7 @@ export default {
       }
   },
   mounted () {
+    console.log(this.$store)
     this.lastcity=this.city
     this.getHomeDataMsg()
   },
