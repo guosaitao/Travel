@@ -8,7 +8,7 @@
                 <h1 style="color:yellow">这是剧名插槽header</h1>
             </div>
             <template #footer>
-                <h1 style="color:aqua">这是footer插槽</h1>
+                <h1 style="color:aqua">这是footer插槽333</h1>
             </template>
         </father>
     </div>
