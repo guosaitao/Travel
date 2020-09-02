@@ -5,6 +5,14 @@
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
     <home-weekend :list="weekendList"></home-weekend>
+    <button style="    width: 100px;
+    height: 50px;
+    position: fixed;
+    bottom: 60px;
+    right: 10px;
+    border-radius: 20px;
+    background: red;
+    color: #fff;" @click="goTest()">vue测试</button>
   </div>
 </template>
 <script>
@@ -47,6 +55,9 @@ export default {
         this.iconList=data.data.iconList
         this.recommendList=data.data.recommendList
         this.weekendList=data.data.weekendList
+      },
+      goTest (){
+        this.$router.push({name:'Test'})
       }
   },
   mounted () {

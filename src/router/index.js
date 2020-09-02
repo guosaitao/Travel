@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import city from '@/pages/city/city.vue'
 import Detail from '@/pages/detail/Detail.vue'
+import Test from '@/test.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -20,6 +21,11 @@ export default new Router({
       path: '/detail/:id',
       name:'detail',
       component:Detail
+    },
+    {
+      path: '/test',
+      name:'Test',
+      component:Test
     }
   ],
   scrollBehavior (to, from, savedPosition) {

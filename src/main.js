@@ -11,10 +11,16 @@ import 'styles/border.css'
 import 'styles/iconfont.css'
 import vueAwesome from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
+import { 
+  Field  
+} from 'vant';
 
 Vue.config.productionTip = false
 fastclick.attach(document.body)
-Vue.use(vueAwesome)
+Vue.use(
+  vueAwesome,
+  Field
+  )
 new Vue({
   el: '#app',
   router,
