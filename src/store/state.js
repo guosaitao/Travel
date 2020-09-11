@@ -1,5 +1,4 @@
 let defaultCity="上海"
-debugger
 try {
     if(localStorage.city){
         defaultCity=localStorage.city

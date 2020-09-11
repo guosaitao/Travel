@@ -10,6 +10,8 @@ import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
 import vueAwesome from 'vue-awesome-swiper'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 import 'swiper/dist/css/swiper.css'
 import { 
   Field  
@@ -19,7 +21,9 @@ Vue.config.productionTip = false
 fastclick.attach(document.body)
 Vue.use(
   vueAwesome,
-  Field
+  Field,
+  axios,
+  VueAxios
   )
 new Vue({
   el: '#app',
